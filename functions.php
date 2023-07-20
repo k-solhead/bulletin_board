@@ -48,7 +48,7 @@ function insert_comment($dbh,$name,$comment) {
   }
 }
 
-function sekect_comment($dbh) {
+function select_comment($dbh) {
   $data = [];
   $sql = "SELECT name, comment, created FROM board";
   $stmt = $dbh->prepare($sql);
