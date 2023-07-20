@@ -9,8 +9,7 @@
   <h1>ひとこと掲示板</h1>
   <table border=1>
     <tr style="background-color: orange"><th>名前</th><th>コメント</th><th>時刻</th></tr>
-    <?php if(count($data)) {
-      foreach($data as $row) {
+    <?php foreach($data as $row) {
     ?>
     <tr>
       <td><?php echo html_escape($row['name']); ?></td>
@@ -18,18 +17,17 @@
       <td><?php echo html_escape($row['created']); ?></td>
     </tr>
     <?php } ?>
-    <?php } ?>
   </table>
 
-  <?php if(!empty($errs)) {
-    foreach((array)$errs as $err) {
+  <?php if(count($errs)) {
+    foreach($errs as $err) {
       echo '<p style="color: red">'.$err.'</p>';
     }
   } ?>
 
   <form action="" method="POST">
-    <p>お名前*<input type="text" name="name">（50文字まで）</p>
-    <p>ひとこと*<textarea name="comment" rows="4" cols="40"></textarea>（200文字まで）</p>
+    <p>お名前*<input type="text" name="name">(50文字まで)</p>
+    <p>ひとこと*<textarea name="comment" rows="4" cols="40"></textarea>(200文字まで)</p>
     <input type="submit" value="書き込む">
   </form>
 
