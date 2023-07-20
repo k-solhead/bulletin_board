@@ -22,14 +22,14 @@
   </table>
 
   <?php if(count($errs)) {
-    foreach($errs as $err) {
-      echo '<p style="color: red">'.$err.'</p>'
+    foreach((array)$errs as $err) {
+      echo '<p style="color: red">'.$err.'</p>';
     }
   } ?>
 
   <form action="" method="POST">
     <p>お名前*<input type="text" name="name">（50文字まで）</p>
-    <p>ひとこと<textarea name="comment" rows="4" cols="40">（200文字まで）</p>
+    <p>ひとこと*<textarea name="comment" rows="4" cols="40"></textarea>（200文字まで）</p>
     <input type="submit" value="書き込む">
   </form>
 
