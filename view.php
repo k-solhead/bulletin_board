@@ -21,7 +21,7 @@
     <?php } ?>
   </table>
 
-  <?php if(count($errs)) {
+  <?php if(!empty($errs)) {
     foreach((array)$errs as $err) {
       echo '<p style="color: red">'.$err.'</p>';
     }

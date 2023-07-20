@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 require_once('functions.php');
 
 $errs = [];
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if(check_word($comment, 200)) {
     $errs = 'コメント欄を修正してください。';
   }
-  if(count($errs) === 0) {
+  if(empty($errs)) {
     $result = insert_comment($dbh, $name, $comment);
   }
 }
